@@ -1,23 +1,23 @@
-What is Windows authentication in SQL Server? What is one benefit of Windows Authentication over SQL Authentication?
-Windows Authentication: Windows Authentication allows users to connect to SQL Server using their Windows credentials (username and password). This means you don’t need to remember a specific password for SQL Server; instead, you use the same one you use to log in to your computer.
+-- What is Windows authentication in SQL Server? What is one benefit of Windows Authentication over SQL Authentication?
+-- Windows Authentication: Windows Authentication allows users to connect to SQL Server using their Windows credentials (username and password). This means you don’t need to remember a specific password for SQL Server; instead, you use the same one you use to log in to your computer.
 
-Benefit: An important benefit of Windows Authentication is security. Since it uses Active Directory (a Microsoft identity management service), you can manage users and their permissions centrally. If a user changes their password in Windows, they do not have to change it in SQL Server, which reduces the risk of errors and improves security.
-
-
-Explain the difference between authentication and authorization. Give an example of authorization in the database.
-Authentication: Authentication is the process of verifying a user's identity. It’s like showing your ID to prove who you are. In SQL Server, this is done when logging in and checking credentials.
-
-Authorization: Authorization occurs after authentication and refers to what resources or actions a user is permitted to access. It’s like having an ID that not only states who you are but also which areas you can access.
-
-Example of authorization in the database: If you have a database that contains employee information and decide that only certain users can view that information, you can grant specific permissions. For example, you might give a specific user permission to perform queries (SELECT) on a table called "Employees." This means that, even though the user has been authenticated (identified), they will only be able to access the information they have been permitted to see.
+-- Benefit: An important benefit of Windows Authentication is security. Since it uses Active Directory (a Microsoft identity management service), you can manage users and their permissions centrally. If a user changes their password in Windows, they do not have to change it in SQL Server, which reduces the risk of errors and improves security.
 
 
-What would happen if you grant SELECT permission on a table to the fixed database role called ‘public’? Would this granted permission apply to future users (users that are not created yet)? Why could this be dangerous?
-Granting SELECT permission to ‘public’: When you grant SELECT permission to a role called ‘public,’ you are granting access to all users of the database, including those who may be created in the future. This means that anyone with a user account in that database will be able to see the data in the table to which you have granted access.
+-- Explain the difference between authentication and authorization. Give an example of authorization in the database.
+-- Authentication: Authentication is the process of verifying a user's identity. It’s like showing your ID to prove who you are. In SQL Server, this is done when logging in and checking credentials.
 
-Application to future users: Yes, this permission applies to all future users that are created in the database. It does not matter when they are created; they will all automatically have access to that table.
+-- Authorization: Authorization occurs after authentication and refers to what resources or actions a user is permitted to access. It’s like having an ID that not only states who you are but also which areas you can access.
 
-Danger: This can be very dangerous because you could be exposing sensitive or confidential information to people who should not have access to it. For example, if your table contains employee data with personal information, any new user could see that data without needing additional authorization. It is crucial to be careful when granting permissions, especially to the ‘public’ role, to avoid data leaks or unauthorized access.
+-- Example of authorization in the database: If you have a database that contains employee information and decide that only certain users can view that information, you can grant specific permissions. For example, you might give a specific user permission to perform queries (SELECT) on a table called "Employees." This means that, even though the user has been authenticated (identified), they will only be able to access the information they have been permitted to see.
+
+
+-- What would happen if you grant SELECT permission on a table to the fixed database role called ‘public’? Would this granted permission apply to future users (users that are not created yet)? Why could this be dangerous?
+-- Granting SELECT permission to ‘public’: When you grant SELECT permission to a role called ‘public,’ you are granting access to all users of the database, including those who may be created in the future. This means that anyone with a user account in that database will be able to see the data in the table to which you have granted access.
+
+-- Application to future users: Yes, this permission applies to all future users that are created in the database. It does not matter when they are created; they will all automatically have access to that table.
+
+-- Danger: This can be very dangerous because you could be exposing sensitive or confidential information to people who should not have access to it. For example, if your table contains employee data with personal information, any new user could see that data without needing additional authorization. It is crucial to be careful when granting permissions, especially to the ‘public’ role, to avoid data leaks or unauthorized access.
 
 
 
