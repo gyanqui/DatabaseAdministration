@@ -83,13 +83,13 @@ GO
 
 --SHOW 3 (screenshot examples): 
 
---The process you used to copy the database as a ìtestî version. Show that the new copy exists.
+--The process you used to copy the database as a ‚Äútest‚Äù version. Show that the new copy exists.
 USE [master]
 RESTORE DATABASE [bowling_TEST] FROM  DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER2\MSSQL\Backup\BowlingLeagueExample.bak' WITH  FILE = 1,  MOVE N'BowlingLeagueExample' TO N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER2\MSSQL\DATA\bowling_TEST.mdf',  MOVE N'BowlingLeagueExample_log' TO N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER2\MSSQL\DATA\bowling_TEST_log.ldf',  NOUNLOAD,  REPLACE,  STATS = 5
 
 GO
 
---The process you used to copy the database as a ìdevelopmentî version. Show that this copy exists in the cloud.
+--The process you used to copy the database as a ‚Äúdevelopment‚Äù version. Show that this copy exists in the cloud.
 
 USE [master]
 RESTORE DATABASE [yanqui_bowling_development] FROM  DISK = N'/home/yanqui_bowling_development.bak' WITH  FILE = 1,  MOVE N'BowlingLeagueExample' TO N'/var/opt/mssql/data/yanqui_bowling_development.mdf',  MOVE N'BowlingLeagueExample_log' TO N'/var/opt/mssql/data/yanqui_bowling_development_log.ldf',  NOUNLOAD,  STATS = 5
