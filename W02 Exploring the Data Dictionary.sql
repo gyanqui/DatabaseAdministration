@@ -1,5 +1,4 @@
 -- Week 2 Assignment
-
 -- SHOW 1: Your queries and query results. The results should include the names of
 -- all user tables in each database, when each was created, and last modified date.
 -- WideWorldImporters, BowlingLeagueExample, SchoolScheduling
